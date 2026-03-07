@@ -21,24 +21,15 @@ This project uses **LangChain, Google Gemini embeddings, Pinecone vector databas
 
 The system follows a **Retrieval-Augmented Generation (RAG) pipeline**:
 
-PDF Document
-↓
-Text Chunking
-↓
-Embeddings Generation (Gemini)
-↓
-Store in Pinecone Vector Database
-↓
-User Question
-↓
-Convert Query to Embedding
-↓
-Vector Similarity Search
-↓
-Retrieve Relevant Document Chunks
-↓
-LLM Generates Final Answer
-
+1. Load the **PDF document**
+2. Split the text into **smaller chunks**
+3. Generate **embeddings using Gemini**
+4. Store embeddings in **Pinecone Vector Database**
+5. Convert the **user question into an embedding**
+6. Perform **vector similarity search**
+7. Retrieve the **most relevant document chunks**
+8. Send the context to the **LLM**
+9. Generate the **final answer**
 ---
 
 ## 🛠 Tech Stack
@@ -55,8 +46,7 @@ LLM Generates Final Answer
 
 ---
 
-## 📂 Project Structure
-
+```
 RAG-System/
 │
 ├── data/
@@ -69,11 +59,8 @@ RAG-System/
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
-├── .env.example
-
-
-Install dependencies:
-pip install -r requirements.txt
+└── .env.example
+```
 
 ---
 
@@ -81,9 +68,9 @@ pip install -r requirements.txt
 
 Create a `.env` file in the project root directory:
 
-GEMINI_API_KEY=your_api_key
-PINECONE_API_KEY=your_api_key
-PINECONE_INDEX_NAME=your_index_name
+- GEMINI_API_KEY=your_api_key
+- PINECONE_API_KEY=your_api_key
+- PINECONE_INDEX_NAME=your_index_name
 
 
 ---
