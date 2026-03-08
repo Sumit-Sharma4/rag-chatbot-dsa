@@ -88,7 +88,7 @@ You can ask questions like:
 
 ## 📸 Demo
 
-
+![Chatbot Screenshot](chatbot.png)
 ---
 
 ## 📈 Future Improvements
