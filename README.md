@@ -1,4 +1,4 @@
-# 📚 DSA RAG Chatbot
+#  DSA RAG Chatbot
 
 An **AI-powered Retrieval-Augmented Generation (RAG) chatbot** that answers questions from a **Data Structures and Algorithms (DSA) PDF document**.
 
@@ -6,7 +6,7 @@ This project uses **LangChain, Google Gemini embeddings, Pinecone vector databas
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Ask questions directly from a **PDF document**
 - Uses **vector embeddings** for semantic search
@@ -17,7 +17,7 @@ This project uses **LangChain, Google Gemini embeddings, Pinecone vector databas
 
 ---
 
-## 🧠 How It Works
+##  How It Works
 
 The system follows a **Retrieval-Augmented Generation (RAG) pipeline**:
 
@@ -64,7 +64,7 @@ RAG-System/
 
 ---
 
-## 🔑 Environment Variables
+##  Environment Variables
 
 Create a `.env` file in the project root directory:
 
@@ -75,7 +75,7 @@ Create a `.env` file in the project root directory:
 
 ---
 
-## 💬 Example Questions
+##  Example Questions
 
 You can ask questions like:
 
@@ -86,7 +86,7 @@ You can ask questions like:
 
 ---
 
-## 📸 Demo
+##  Demo
 
 ![Chatbot Screenshot](chatbot.png)
 ---
@@ -101,13 +101,13 @@ You can ask questions like:
 
 ---
 
-## 📜 License
+##  License
 
 This project is intended for **educational and research purposes**.
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Sumit Sharma**  
 B.Tech CSE Student | AI & Machine Learning Enthusiast
