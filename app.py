@@ -10,27 +10,27 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_pinecone import PineconeVectorStore
 
 
-# -----------------------------------------
+
 # Streamlit Page Config
-# -----------------------------------------
+
 st.set_page_config(page_title="DSA RAG Chatbot", page_icon="🤖")
 
 st.title("📚 DSA RAG Chatbot")
 st.write("Ask questions from the uploaded Data Structures & Algorithms PDF")
 
 
-# -----------------------------------------
+
 # Initialize Embeddings
-# -----------------------------------------
+
 embeddings = GoogleGenerativeAIEmbeddings(
     model="models/gemini-embedding-001",
     google_api_key=os.getenv("GEMINI_API_KEY")
 )
 
 
-# -----------------------------------------
+
 # Connect to Pinecone
-# -----------------------------------------
+
 pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 
 index_name = os.getenv("PINECONE_INDEX_NAME")
@@ -43,18 +43,18 @@ vectorstore = PineconeVectorStore(
 retriever = vectorstore.as_retriever(search_kwargs={"k":3})
 
 
-# -----------------------------------------
+
 # Gemini LLM
-# -----------------------------------------
+
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
     google_api_key=os.getenv("GEMINI_API_KEY")
 )
 
 
-# -----------------------------------------
+
 # Session State
-# -----------------------------------------
+
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
@@ -62,9 +62,9 @@ if "history" not in st.session_state:
     st.session_state.history = []
 
 
-# -----------------------------------------
+
 # Query Rewriting
-# -----------------------------------------
+
 def rewrite_query(question):
 
     prompt = f"""
@@ -87,9 +87,9 @@ Return ONLY the rewritten question.
     return response.content.strip()
 
 
-# -----------------------------------------
+-
 # Generate Answer
-# -----------------------------------------
+
 def generate_answer(question, context):
 
     prompt = f"""
@@ -117,17 +117,17 @@ Short Answer:
     return response.content
 
 
-# -----------------------------------------
+
 # Display Chat History
-# -----------------------------------------
+
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
 
-# -----------------------------------------
+
 # Chat Input
-# -----------------------------------------
+
 if prompt := st.chat_input("Ask a DSA question"):
 
     # Display user message
