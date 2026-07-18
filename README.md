@@ -32,7 +32,7 @@ The system follows a **Retrieval-Augmented Generation (RAG) pipeline**:
 9. Generate the **final answer**
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 | Technology | Purpose |
 |------------|--------|
@@ -91,7 +91,7 @@ You can ask questions like:
 ![Chatbot Screenshot](chatbot.png)
 ---
 
-## 📈 Future Improvements
+##  Future Improvements
 
 - Multi-document support  
 - Hybrid search (vector + keyword search)  
