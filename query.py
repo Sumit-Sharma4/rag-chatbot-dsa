@@ -9,18 +9,18 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_pinecone import PineconeVectorStore
 
 
-# ----------------------------------------
+
 # Initialize Embeddings
-# ----------------------------------------
+
 embeddings = GoogleGenerativeAIEmbeddings(
     model="models/gemini-embedding-001",
     google_api_key=os.getenv("GEMINI_API_KEY")
 )
 
 
-# ----------------------------------------
+
 # Connect to Pinecone
-# ----------------------------------------
+
 pc = Pinecone(
     api_key=os.getenv("PINECONE_API_KEY")
 )
@@ -35,24 +35,24 @@ vectorstore = PineconeVectorStore(
 retriever = vectorstore.as_retriever(search_kwargs={"k":5})
 
 
-# ----------------------------------------
+
 # Gemini LLM
-# ----------------------------------------
+
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
     google_api_key=os.getenv("GEMINI_API_KEY")
 )
 
 
-# ----------------------------------------
+
 # Chat History
-# ----------------------------------------
+
 history = []
 
 
-# ----------------------------------------
+
 # Query Rewriting (Follow-up Questions)
-# ----------------------------------------
+
 def rewrite_question(question):
 
     prompt = f"""
@@ -76,9 +76,9 @@ Return ONLY the rewritten question.
     return response.content.strip()
 
 
-# ----------------------------------------
+
 # Ask LLM with Context
-# ----------------------------------------
+
 def ask_llm(question, context):
 
     prompt = f"""
@@ -112,9 +112,9 @@ Answer:
     return response.content
 
 
-# ----------------------------------------
+
 # Main Query Loop
-# ----------------------------------------
+
 print("\nRAG System Ready!")
 print("Type 'exit' to quit.\n")
 
